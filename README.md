@@ -32,13 +32,13 @@ Episode 3: Reward=853.85, Steps=1000
 #### Expert Performance Videos
 
 **Episode 0:**
-![Episode 0](expert_implementations/videos_20251022_012428/ppo_carracing-episode-0.mp4)
+![Episode 0](expert_implementations/videos_20251022_012428/ppo_carracing-episode-0.gif)
 
 **Episode 1:**
-![Episode 1](expert_implementations/videos_20251022_012428/ppo_carracing-episode-1.mp4)
+![Episode 1](expert_implementations/videos_20251022_012428/ppo_carracing-episode-1.gif)
 
 **Episode 2:**
-![Episode 2](expert_implementations/videos_20251022_012428/ppo_carracing-episode-2.mp4)
+![Episode 2](expert_implementations/videos_20251022_012428/ppo_carracing-episode-2.gif)
 
 
 
