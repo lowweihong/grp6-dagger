@@ -1,0 +1,26 @@
+DAgger Training Results
+Expert Performance: 691.30
+Training Time: 4:08:06.983049
+Total Samples: 20000
+
+Student Performance per Iteration:
+Iteration 1: -21.50
+Iteration 2: -31.35
+Iteration 3: -13.96
+Iteration 4: -23.62
+Iteration 5: -18.17
+Iteration 6: -11.92
+Iteration 7: -19.40
+Iteration 8: -18.12
+Iteration 9: -18.26
+Iteration 10: -12.23
+Iteration 11: -27.04
+Iteration 12: -27.99
+Iteration 13: -26.91
+Iteration 14: -26.82
+Iteration 15: -28.39
+Iteration 16: -29.08
+Iteration 17: -24.23
+Iteration 18: -27.85
+Iteration 19: -21.85
+Iteration 20: -16.21
