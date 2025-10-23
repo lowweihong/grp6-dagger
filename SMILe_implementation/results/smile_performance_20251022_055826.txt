@@ -1,0 +1,28 @@
+SMILe Training Results (with Fall Tracking)
+Expert Performance: Reward: 627.37, Falls: 0.00
+Training time: 3:33:12.814456
+Total samples collected: 19728
+Number of student models in mixture: 20
+TensorBoard logs saved to: ./tensorboard_logs_smile
+
+Student performance per iteration:
+Iteration 1: Reward: 226.23, Falls: 0.00
+Iteration 2: Reward: 449.52, Falls: 0.00
+Iteration 3: Reward: 376.11, Falls: 0.00
+Iteration 4: Reward: 48.56, Falls: 0.00
+Iteration 5: Reward: 646.17, Falls: 0.00
+Iteration 6: Reward: 639.52, Falls: 0.00
+Iteration 7: Reward: 614.72, Falls: 0.00
+Iteration 8: Reward: 356.13, Falls: 0.00
+Iteration 9: Reward: 460.34, Falls: 0.00
+Iteration 10: Reward: 404.64, Falls: 0.00
+Iteration 11: Reward: 632.54, Falls: 0.00
+Iteration 12: Reward: 531.21, Falls: 0.00
+Iteration 13: Reward: 767.24, Falls: 0.00
+Iteration 14: Reward: 312.31, Falls: 0.00
+Iteration 15: Reward: 673.07, Falls: 0.00
+Iteration 16: Reward: 742.93, Falls: 0.00
+Iteration 17: Reward: 754.96, Falls: 0.00
+Iteration 18: Reward: 712.40, Falls: 0.00
+Iteration 19: Reward: 564.65, Falls: 0.00
+Iteration 20: Reward: 602.15, Falls: 0.00

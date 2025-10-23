@@ -1,0 +1,12 @@
+=== DAgger CarRacing-v3 Results ===
+Timestamp: 2025-10-23 08:07:04
+Model: dagger_student_ppo_with_fallcount2.keras
+Average Reward: 625.16
+Reward Std: 243.62
+Min Reward: 319.35
+Max Reward: 915.50
+
+Episode Details:
+Episode 1: Reward=640.61, Steps=1000
+Episode 2: Reward=915.50, Steps=845
+Episode 3: Reward=319.35, Steps=1000

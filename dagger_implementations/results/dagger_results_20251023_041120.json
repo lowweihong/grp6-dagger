@@ -1,0 +1,138 @@
+{
+  "training_info": {
+    "expert_model": "./logs/ppo/CarRacing-v3_6/best_model.zip",
+    "student_model": "dagger_student_ppo_with_fallcount2.keras",
+    "iterations": 20,
+    "episodes_per_iteration": 1,
+    "epochs_per_iteration": 5,
+    "batch_size": 32,
+    "eval_episodes": 5,
+    "training_time_seconds": 13839.261498,
+    "total_samples": 20000,
+    "n_stacked_frames": 2
+  },
+  "expert_performance": {
+    "reward": 827.4939994449803,
+    "avg_falls": 0.0
+  },
+  "student_performance": {
+    "iterations": [
+      {
+        "iteration": 1,
+        "reward": -19.64307713385112,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 2,
+        "reward": 290.91853996260863,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 3,
+        "reward": 104.78511611941133,
+        "avg_falls": 0.8
+      },
+      {
+        "iteration": 4,
+        "reward": 284.61704167424494,
+        "avg_falls": 0.6
+      },
+      {
+        "iteration": 5,
+        "reward": 341.8138549098365,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 6,
+        "reward": 347.8163775151292,
+        "avg_falls": 0.6
+      },
+      {
+        "iteration": 7,
+        "reward": 354.01080200775976,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 8,
+        "reward": 385.49256399703575,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 9,
+        "reward": 395.90391430025386,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 10,
+        "reward": 587.0748474048318,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 11,
+        "reward": 550.0911834810711,
+        "avg_falls": 0.2
+      },
+      {
+        "iteration": 12,
+        "reward": 530.3052472025269,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 13,
+        "reward": 559.2250267779667,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 14,
+        "reward": 711.8559345881005,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 15,
+        "reward": 591.6370061371946,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 16,
+        "reward": 647.8273931368401,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 17,
+        "reward": 597.4521864134455,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 18,
+        "reward": 545.0282919208823,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 19,
+        "reward": 572.5365043791244,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 20,
+        "reward": 763.0757957211675,
+        "avg_falls": 0.0
+      }
+    ]
+  },
+  "improvements": {
+    "reward_improvement": 782.7188728550186,
+    "fall_improvement": 0.0,
+    "final_vs_expert": {
+      "reward": {
+        "student": 763.0757957211675,
+        "expert": 827.4939994449803,
+        "difference": -64.41820372381278
+      },
+      "falls": {
+        "student": 0.0,
+        "expert": 0.0,
+        "difference": 0.0
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "training_info": {
+    "type": "Behavioral Cloning",
+    "expert_model": "./logs/ppo/CarRacing-v3_6/best_model.zip",
+    "student_model": "bc_student_model.keras",
+    "collection_episodes": 20,
+    "training_epochs": 50,
+    "batch_size": 32,
+    "eval_episodes": 10,
+    "training_time_seconds": 387.748238,
+    "total_samples": 19426,
+    "n_stacked_frames": 2
+  },
+  "expert_performance": {
+    "reward": 686.0295947483016,
+    "avg_falls": 0.0
+  },
+  "student_performance": {
+    "reward": 45.379745344911676,
+    "avg_falls": 0.1
+  }
+}

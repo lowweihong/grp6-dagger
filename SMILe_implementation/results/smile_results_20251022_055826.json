@@ -1,0 +1,139 @@
+{
+  "experiment_type": "SMILe",
+  "timestamp": "2025-10-22T05:58:26.013507",
+  "hyperparameters": {
+    "iterations": 20,
+    "episodes_per_iteration": 1,
+    "epochs_per_iteration": 5,
+    "batch_size": 32,
+    "alpha": 0.1,
+    "expert_frames": 2,
+    "student_frames": 2,
+    "max_steps_per_episode": 1000
+  },
+  "expert_performance": {
+    "reward": 627.3715547332631,
+    "falls": 0.0
+  },
+  "training_time_seconds": 12792.814456,
+  "total_samples_collected": 19728,
+  "number_of_student_models": 20,
+  "iterations": [
+    {
+      "iteration": 1,
+      "reward": 226.2298099949356,
+      "avg_falls": 0.0
+    },
+    {
+      "iteration": 2,
+      "reward": 449.51948251343345,
+      "avg_falls": 0.0
+    },
+    {
+      "iteration": 3,
+      "reward": 376.114482798608,
+      "avg_falls": 0.0
+    },
+    {
+      "iteration": 4,
+      "reward": 48.55660444809985,
+      "avg_falls": 0.0
+    },
+    {
+      "iteration": 5,
+      "reward": 646.1700077598141,
+      "avg_falls": 0.0
+    },
+    {
+      "iteration": 6,
+      "reward": 639.5175413247155,
+      "avg_falls": 0.0
+    },
+    {
+      "iteration": 7,
+      "reward": 614.7210477592514,
+      "avg_falls": 0.0
+    },
+    {
+      "iteration": 8,
+      "reward": 356.1298736556567,
+      "avg_falls": 0.0
+    },
+    {
+      "iteration": 9,
+      "reward": 460.3415262472432,
+      "avg_falls": 0.0
+    },
+    {
+      "iteration": 10,
+      "reward": 404.64363085037587,
+      "avg_falls": 0.0
+    },
+    {
+      "iteration": 11,
+      "reward": 632.5351383955469,
+      "avg_falls": 0.0
+    },
+    {
+      "iteration": 12,
+      "reward": 531.2107659805093,
+      "avg_falls": 0.0
+    },
+    {
+      "iteration": 13,
+      "reward": 767.2422446972761,
+      "avg_falls": 0.0
+    },
+    {
+      "iteration": 14,
+      "reward": 312.3076712858835,
+      "avg_falls": 0.0
+    },
+    {
+      "iteration": 15,
+      "reward": 673.0665159879322,
+      "avg_falls": 0.0
+    },
+    {
+      "iteration": 16,
+      "reward": 742.9322570526881,
+      "avg_falls": 0.0
+    },
+    {
+      "iteration": 17,
+      "reward": 754.9581447128078,
+      "avg_falls": 0.0
+    },
+    {
+      "iteration": 18,
+      "reward": 712.3979935310716,
+      "avg_falls": 0.0
+    },
+    {
+      "iteration": 19,
+      "reward": 564.6504162245807,
+      "avg_falls": 0.0
+    },
+    {
+      "iteration": 20,
+      "reward": 602.153319089566,
+      "avg_falls": 0.0
+    }
+  ],
+  "improvements": {
+    "reward_improvement": 375.9235090946304,
+    "fall_improvement": 0.0,
+    "final_vs_expert": {
+      "reward": {
+        "student": 602.153319089566,
+        "expert": 627.3715547332631,
+        "difference": -25.218235643697085
+      },
+      "falls": {
+        "student": 0.0,
+        "expert": 0.0,
+        "difference": 0.0
+      }
+    }
+  }
+}

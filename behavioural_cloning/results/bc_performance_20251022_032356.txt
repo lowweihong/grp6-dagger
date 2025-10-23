@@ -1,0 +1,6 @@
+BC Training Results
+Training Time: 0:06:27.748238
+Total Samples: 19426
+
+Expert Performance: Reward=686.03, Avg Falls=0.0
+Student Performance: Reward=45.38, Avg Falls=0.1
