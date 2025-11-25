@@ -9,6 +9,7 @@ We implement and compare four distinct approaches:
 2) Behavioral Cloning (BC)
 3) DAgger 
 4) SMILe (Stochastic Mixing Iterative Learning)
+5) Modified DAgger (with KDE filtering and action noise)
 
 Our results validate the core insights of the DAgger paper, demonstrating that iterative learning with expert corrections significantly outperforms traditional behavioral cloning. The improved DAgger implementation achieves near-expert performance, validating the theoretical advantages of the algorithm.
 
@@ -102,9 +103,20 @@ This reimplementation successfully validates the DAgger paper's core insights. T
 ## Setup and Reproduction
 
 ### Prerequisites
+
+Install all required dependencies using the provided requirements file:
+
 ```bash
-pip install gymnasium stable-baselines3 tensorflow numpy
+pip install -r requirements.txt
 ```
+
+Alternatively, if you prefer to install dependencies manually:
+
+```bash
+pip install gymnasium stable-baselines3 tensorflow numpy tqdm opencv-python scikit-learn jupyter notebook matplotlib pillow
+```
+
+**Note**: For the Modified DAgger implementation, `scikit-learn` is required for KDE-based trajectory filtering.
 
 ### Expert Training
 ```bash
@@ -131,6 +143,14 @@ python train_dagger_with_fallcount.py
 # SMILe
 cd SMILe_implementation
 python train_smile.py
+
+# Modified DAgger (with KDE filtering and action noise)
+cd dagger_modified
+python train_dagger_modified.py \
+    --expert-model ../expert_implementations/logs/ppo/CarRacing-v3_6/best_model.zip \
+    --kde-threshold 0.5 \
+    --action-noise-prob 0.1 \
+    --action-noise-std 0.1
 ```
 
 ### Evaluation
