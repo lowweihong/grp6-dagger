@@ -146,11 +146,7 @@ python train_smile.py
 
 # Modified DAgger (with KDE filtering and action noise)
 cd dagger_modified
-python train_dagger_modified.py \
-    --expert-model ../expert_implementations/logs/ppo/CarRacing-v3_6/best_model.zip \
-    --kde-threshold 0.5 \
-    --action-noise-prob 0.1 \
-    --action-noise-std 0.1
+python train_dagger_modified.py
 ```
 
 ### Evaluation
