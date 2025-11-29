@@ -24,10 +24,13 @@ from sklearn.neighbors import KernelDensity
 
 # Set GPU (cross-platform compatible)
 # On Windows with single GPU, use "0". On Linux with multiple GPUs, adjust as needed.
-# Comment out or modify based on your system configuration
+# On macOS, CUDA is not available (Metal is used), so this is ignored
 import platform
 if platform.system() == "Windows":
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"  # Windows typically uses "0" for first GPU
+elif platform.system() == "Darwin":  # macOS
+    # macOS doesn't support CUDA, TensorFlow will use CPU or Metal
+    pass  # Don't set CUDA_VISIBLE_DEVICES on macOS
 else:
     os.environ["CUDA_VISIBLE_DEVICES"] = "1,2"  # Linux multi-GPU setup
 
@@ -170,10 +173,20 @@ def compute_trajectory_density(trajectory_states, existing_dataset_states,
     
     # Compute log density for each state in trajectory
     log_densities = kde.score_samples(trajectory_flat)
+    
+    # Use log densities for comparison to avoid numerical overflow
+    # Clamp extreme values to prevent inf
+    log_densities = np.clip(log_densities, -700, 700)  # exp(700) is near max float64, exp(-700) near zero
     densities = np.exp(log_densities)
     
     # Return average density
-    return np.mean(densities)
+    avg_density = np.mean(densities)
+    
+    # If still inf (shouldn't happen after clipping), return a large finite value
+    if not np.isfinite(avg_density):
+        return 1e10  # Very large but finite value
+    
+    return avg_density
 
 def add_action_noise(action, noise_prob=ACTION_NOISE_PROB, noise_std=ACTION_NOISE_STD):
     """
@@ -278,7 +291,7 @@ def main():
     parser.add_argument('--eval-episodes', type=int, default=5,
                         help='Number of episodes for evaluation')
     parser.add_argument('--tensorboard-log', type=str, default='./results/dagger_modified_tensorboard',
-                        help='Directory for TensorBoard logs')
+                        help='Directory for TensorBoard logs (default: ./results/dagger_modified_tensorboard)')
     parser.add_argument('--no-tensorboard', action='store_true',
                         help='Disable TensorBoard logging')
     # New arguments for modifications

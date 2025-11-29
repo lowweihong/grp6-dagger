@@ -1,0 +1,29 @@
+Modified DAgger Training Results
+Expert Performance: Reward=777.29, Avg Falls=0.0
+Training Time: 1:35:52.994767
+Total Samples: 1000
+Trajectory Acceptance Rate: 5.0%
+
+Student Performance per Iteration:
+Iteration | Reward | Avg Falls
+----------|--------|----------
+        1 | -21.66 |      0.0
+        2 | 180.83 |      0.0
+        3 | 296.29 |      0.0
+        4 | 356.12 |      0.0
+        5 | 292.46 |      0.0
+        6 | 163.32 |      0.0
+        7 | 315.39 |      0.0
+        8 | 429.53 |      0.0
+        9 | 339.94 |      0.0
+       10 | 228.17 |      0.0
+       11 | 259.88 |      0.0
+       12 | 265.29 |      0.0
+       13 | 324.11 |      0.0
+       14 | 245.52 |      0.0
+       15 | 186.32 |      0.0
+       16 | 337.97 |      0.0
+       17 | 237.76 |      0.0
+       18 | 305.93 |      0.0
+       19 | 273.94 |      0.0
+       20 | 212.80 |      0.0

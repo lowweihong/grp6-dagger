@@ -1,0 +1,252 @@
+{
+  "training_info": {
+    "expert_model": "../expert_implementations/logs/ppo/CarRacing-v3_6/best_model.zip",
+    "student_model": "results/dagger_modified_student.keras",
+    "iterations": 20,
+    "episodes_per_iteration": 1,
+    "epochs_per_iteration": 5,
+    "batch_size": 32,
+    "eval_episodes": 5,
+    "training_time_seconds": 5694.564229,
+    "total_samples": 853,
+    "n_stacked_frames": 2,
+    "modifications": {
+      "kde_bandwidth": 0.1,
+      "kde_threshold": 0.5,
+      "action_noise_prob": 0.1,
+      "action_noise_std": 0.1
+    }
+  },
+  "expert_performance": {
+    "reward": 750.0938127658073,
+    "avg_falls": 0.0
+  },
+  "student_performance": {
+    "iterations": [
+      {
+        "iteration": 1,
+        "reward": -28.831420936287298,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 2,
+        "reward": 219.61207358705337,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 3,
+        "reward": 171.62571619670933,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 4,
+        "reward": 120.90336678279216,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 5,
+        "reward": 187.2262612555536,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 6,
+        "reward": 250.72556692182815,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 7,
+        "reward": 490.05998848664257,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 8,
+        "reward": 221.24406038369798,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 9,
+        "reward": 338.64390877658917,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 10,
+        "reward": 164.5164209642232,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 11,
+        "reward": 288.3409270728479,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 12,
+        "reward": 318.46557981231206,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 13,
+        "reward": 321.71887878772907,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 14,
+        "reward": 447.67244879897305,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 15,
+        "reward": 243.7482325311461,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 16,
+        "reward": 254.2526494258638,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 17,
+        "reward": 445.10380702864023,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 18,
+        "reward": 382.2494039862987,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 19,
+        "reward": 209.36027536266428,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 20,
+        "reward": 331.24963648345494,
+        "avg_falls": 0.0
+      }
+    ]
+  },
+  "trajectory_filtering": {
+    "total_trajectories": 20,
+    "accepted_trajectories": 1,
+    "rejected_trajectories": 19,
+    "acceptance_rate": 5.0,
+    "per_iteration": [
+      {
+        "iteration": 1,
+        "accepted": true,
+        "trajectory_size": 853
+      },
+      {
+        "iteration": 2,
+        "accepted": false,
+        "trajectory_size": 1000
+      },
+      {
+        "iteration": 3,
+        "accepted": false,
+        "trajectory_size": 1000
+      },
+      {
+        "iteration": 4,
+        "accepted": false,
+        "trajectory_size": 1000
+      },
+      {
+        "iteration": 5,
+        "accepted": false,
+        "trajectory_size": 1000
+      },
+      {
+        "iteration": 6,
+        "accepted": false,
+        "trajectory_size": 1000
+      },
+      {
+        "iteration": 7,
+        "accepted": false,
+        "trajectory_size": 1000
+      },
+      {
+        "iteration": 8,
+        "accepted": false,
+        "trajectory_size": 1000
+      },
+      {
+        "iteration": 9,
+        "accepted": false,
+        "trajectory_size": 1000
+      },
+      {
+        "iteration": 10,
+        "accepted": false,
+        "trajectory_size": 1000
+      },
+      {
+        "iteration": 11,
+        "accepted": false,
+        "trajectory_size": 1000
+      },
+      {
+        "iteration": 12,
+        "accepted": false,
+        "trajectory_size": 1000
+      },
+      {
+        "iteration": 13,
+        "accepted": false,
+        "trajectory_size": 1000
+      },
+      {
+        "iteration": 14,
+        "accepted": false,
+        "trajectory_size": 1000
+      },
+      {
+        "iteration": 15,
+        "accepted": false,
+        "trajectory_size": 1000
+      },
+      {
+        "iteration": 16,
+        "accepted": false,
+        "trajectory_size": 1000
+      },
+      {
+        "iteration": 17,
+        "accepted": false,
+        "trajectory_size": 1000
+      },
+      {
+        "iteration": 18,
+        "accepted": false,
+        "trajectory_size": 1000
+      },
+      {
+        "iteration": 19,
+        "accepted": false,
+        "trajectory_size": 1000
+      },
+      {
+        "iteration": 20,
+        "accepted": false,
+        "trajectory_size": 1000
+      }
+    ]
+  },
+  "improvements": {
+    "reward_improvement": 360.08105741974225,
+    "fall_improvement": 0.0,
+    "final_vs_expert": {
+      "reward": {
+        "student": 331.24963648345494,
+        "expert": 750.0938127658073,
+        "difference": -418.8441762823524
+      },
+      "falls": {
+        "student": 0.0,
+        "expert": 0.0,
+        "difference": 0.0
+      }
+    }
+  }
+}
