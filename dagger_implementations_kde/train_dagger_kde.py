@@ -20,7 +20,7 @@ import os
 import argparse
 import json
 from datetime import datetime
-from tensorflow.keras.callbacks import TensorBoard, EarlyStopping
+from tensorflow.keras.callbacks import TensorBoard, EarlyStopping, ModelCheckpoint
 import collections
 from collections import deque
 from sklearn.neighbors import KernelDensity
@@ -46,7 +46,7 @@ KDE_SAMPLE_SIZE = 1000       # Number of samples to use for KDE estimation (for 
 
 # Default paths - can be overridden by command line arguments
 DEFAULT_EXPERT_MODEL_FILE = "../expert_implementations/logs/ppo/CarRacing-v3_6/best_model.zip"
-STUDENT_MODEL_FILE = "results/dagger_student_kde.keras"
+STUDENT_MODEL_FILE = "dagger_student_kde.keras"
 
 # Manual frame stacking implementation for PPO expert
 class SimpleFrameStack(gym.Wrapper):
@@ -582,6 +582,18 @@ def main():
             tensorboard_callback.log_dir = f"{args.tensorboard_log}/iteration_{i+1}"
             callbacks.append(tensorboard_callback)
         
+        # Add checkpoint callback to save model after each iteration
+        os.makedirs("results", exist_ok=True)
+        checkpoint_path = os.path.join("results", f"checkpoint_iter_{i+1}.keras")
+        checkpoint_callback = ModelCheckpoint(
+            checkpoint_path,
+            monitor='val_loss',
+            save_best_only=False,
+            save_weights_only=False,
+            verbose=0
+        )
+        callbacks.append(checkpoint_callback)
+        
         # Fine-tune the student model (like SMILe) instead of retraining from scratch
         student.fit(
             states_array,
@@ -666,8 +678,13 @@ def main():
     print(f"Total samples collected: {len(aggregated_states)}")
     
     # Save the final student model
-    model_path = os.path.join("results", args.student_model)
+    # Ensure results directory exists
     os.makedirs("results", exist_ok=True)
+    # If student_model path already includes results/, use it as-is, otherwise add results/
+    if args.student_model.startswith("results/"):
+        model_path = args.student_model
+    else:
+        model_path = os.path.join("results", args.student_model)
     student.save(model_path)
     print(f"\nFinal student model saved to {model_path}")
     
