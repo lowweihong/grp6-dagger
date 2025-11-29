@@ -1636,3 +1636,13 @@ Episode length: 979.20 +/- 41.60
 |    time_elapsed    | 4720     |
 |    total_timesteps | 278528   |
 ---------------------------------
+2025-11-29 13:46:01.488288: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Traceback (most recent call last):
+  File "/home/harshithlanka/GaTech/cs8803DRL/grp6-dagger/expert_implementations/rl-baselines3-zoo/train.py", line 1, in <module>
+    from rl_zoo3.train import train
+  File "/home/harshithlanka/GaTech/cs8803DRL/grp6-dagger/expert_implementations/rl-baselines3-zoo/rl_zoo3/__init__.py", line 9, in <module>
+    from rl_zoo3.utils import (
+  File "/home/harshithlanka/GaTech/cs8803DRL/grp6-dagger/expert_implementations/rl-baselines3-zoo/rl_zoo3/utils.py", line 11, in <module>
+    import yaml
+ModuleNotFoundError: No module named 'yaml'

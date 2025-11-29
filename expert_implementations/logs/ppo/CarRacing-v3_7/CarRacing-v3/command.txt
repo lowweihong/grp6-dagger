@@ -1,0 +1,1 @@
+python rl-baselines3-zoo/train.py --algo ppo --env CarRacing-v3 --device cuda --n-timesteps 400000 --tensorboard-log ./ppo-carracing
