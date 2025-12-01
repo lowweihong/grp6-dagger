@@ -46,8 +46,8 @@ python train_dagger_kde.py \
     --episodes-per-iter 1 \
     --action-noise-prob 0.2 \
     --action-noise-std 0.1 \
-    --kde-threshold 0.1 \
-    --kde-bandwidth 0.5
+    --kde-threshold 0.08 \
+    --kde-bandwidth 0.4
 ```
 
 ## Output
@@ -71,4 +71,5 @@ Requires `scikit-learn` for KDE:
 ```bash
 pip install scikit-learn
 ```
+
 
