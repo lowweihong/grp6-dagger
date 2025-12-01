@@ -352,11 +352,16 @@ def main():
                         help='Bandwidth for KDE')
     parser.add_argument('--kde-sample-size', type=int, default=KDE_SAMPLE_SIZE,
                         help='Max samples to use for KDE estimation')
+    parser.add_argument('--no-kde-filtering', action='store_true',
+                        help='Disable KDE filtering (keep all trajectories, only use action noise)')
     
     args = parser.parse_args()
     
     print("=" * 60)
-    print("Modified DAgger Training with KDE Filtering and Action Noise")
+    if args.no_kde_filtering:
+        print("Modified DAgger Training with Action Noise Only (KDE Filtering Disabled)")
+    else:
+        print("Modified DAgger Training with KDE Filtering and Action Noise")
     print("=" * 60)
     print(f"Expert model: {args.expert_model}")
     print(f"Student model: {args.student_model}")
@@ -369,9 +374,12 @@ def main():
     print(f"Expert mixing probability (β): {args.expert_mixing_prob}")
     print(f"Action noise probability (α): {args.action_noise_prob}")
     print(f"Action noise std (σ): {args.action_noise_std}")
-    print(f"KDE threshold: {args.kde_threshold}")
-    print(f"KDE bandwidth: {args.kde_bandwidth}")
-    print(f"KDE sample size: {args.kde_sample_size}")
+    if args.no_kde_filtering:
+        print(f"KDE filtering: DISABLED")
+    else:
+        print(f"KDE threshold: {args.kde_threshold}")
+        print(f"KDE bandwidth: {args.kde_bandwidth}")
+        print(f"KDE sample size: {args.kde_sample_size}")
     print(f"TensorBoard logging: {'Disabled' if args.no_tensorboard else f'Enabled ({args.tensorboard_log})'}")
     print("=" * 60)
     
@@ -526,15 +534,22 @@ def main():
         # expert_actions are already in the correct [-1,1], [0,1] format
         
         # --- Step C: MODIFIED - Filter Trajectories with KDE before Aggregating ---
-        print(f"Filtering trajectories using KDE (threshold={args.kde_threshold})...")
-        
-        filtered_indices, densities, log_densities = filter_trajectories_with_kde(
-            new_states_student_format,
-            aggregated_states,
-            args.kde_threshold,
-            args.kde_bandwidth,
-            args.kde_sample_size
-        )
+        if args.no_kde_filtering:
+            # Skip KDE filtering - keep all trajectories
+            print("KDE filtering disabled - keeping all trajectories")
+            filtered_indices = list(range(len(new_states_student_format)))
+            densities = np.zeros(len(new_states_student_format))
+            log_densities = np.full(len(new_states_student_format), -np.inf)
+        else:
+            print(f"Filtering trajectories using KDE (threshold={args.kde_threshold})...")
+            
+            filtered_indices, densities, log_densities = filter_trajectories_with_kde(
+                new_states_student_format,
+                aggregated_states,
+                args.kde_threshold,
+                args.kde_bandwidth,
+                args.kde_sample_size
+            )
         
         num_filtered = len(new_states_student_format) - len(filtered_indices)
         filtering_stats.append({
@@ -550,11 +565,14 @@ def main():
             'max_log_density': float(np.max(log_densities))
         })
         
-        print(f"  Sampled: {len(new_states_student_format)}, Filtered out: {num_filtered}, Kept: {len(filtered_indices)}")
-        print(f"  Density stats (exp space) - Mean: {np.mean(densities):.6e}, Min: {np.min(densities):.6e}, Max: {np.max(densities):.6e}")
-        print(f"  Log density stats - Mean: {np.mean(log_densities):.2f}, Min: {np.min(log_densities):.2f}, Max: {np.max(log_densities):.2f}")
+        if not args.no_kde_filtering:
+            print(f"  Sampled: {len(new_states_student_format)}, Filtered out: {num_filtered}, Kept: {len(filtered_indices)}")
+            print(f"  Density stats (exp space) - Mean: {np.mean(densities):.6e}, Min: {np.min(densities):.6e}, Max: {np.max(densities):.6e}")
+            print(f"  Log density stats - Mean: {np.mean(log_densities):.2f}, Min: {np.min(log_densities):.2f}, Max: {np.max(log_densities):.2f}")
+        else:
+            print(f"  Sampled: {len(new_states_student_format)}, Filtered out: {num_filtered}, Kept: {len(filtered_indices)} (KDE disabled)")
         
-        # Only add filtered trajectories
+        # Only add filtered trajectories (or all if KDE disabled)
         filtered_states = [new_states_student_format[idx] for idx in filtered_indices]
         filtered_actions = [expert_actions[idx] for idx in filtered_indices]
         
