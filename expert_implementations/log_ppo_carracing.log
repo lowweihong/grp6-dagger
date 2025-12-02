@@ -1646,3 +1646,15 @@ Traceback (most recent call last):
   File "/home/harshithlanka/GaTech/cs8803DRL/grp6-dagger/expert_implementations/rl-baselines3-zoo/rl_zoo3/utils.py", line 11, in <module>
     import yaml
 ModuleNotFoundError: No module named 'yaml'
+2025-12-01 20:09:16.290675: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-12-01 20:09:16.314927: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-12-01 20:09:16.903830: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+Traceback (most recent call last):
+  File "/home/jeff/DRL/grp6-dagger/expert_implementations/rl-baselines3-zoo/train.py", line 1, in <module>
+    from rl_zoo3.train import train
+  File "/home/jeff/DRL/grp6-dagger/expert_implementations/rl-baselines3-zoo/rl_zoo3/__init__.py", line 9, in <module>
+    from rl_zoo3.utils import (
+  File "/home/jeff/DRL/grp6-dagger/expert_implementations/rl-baselines3-zoo/rl_zoo3/utils.py", line 13, in <module>
+    from huggingface_hub import HfApi
+ModuleNotFoundError: No module named 'huggingface_hub'

@@ -26,23 +26,23 @@ from collections import deque
 from sklearn.neighbors import KernelDensity
 
 # Set GPU
-os.environ["CUDA_VISIBLE_DEVICES"] = "1,2"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 # --- DAgger Hyperparameters ---
-N_DAGGER_ITERATIONS = 20      # Total number of DAgger iterations
+N_DAGGER_ITERATIONS = 40      # Total number of DAgger iterations
 N_EPISODES_PER_ITERATION = 1  # Episodes to collect per iteration
 N_EPOCHS_PER_ITERATION = 5    # Keras epochs to train on the full dataset
 BATCH_SIZE = 32               # Batch size for student training
-MAX_STEPS_PER_EPISODE = 1000  # Maximum steps per episode to prevent infinite episodes
+MAX_STEPS_PER_EPISODE = 100  # Maximum steps per episode to prevent infinite episodes
 N_STACKED_FRAMES = 2          # Number of frames to stack (must match expert)
 EXPERT_MIXING_PROB = 0.1      # Probability of using expert during student rollout (β parameter)
 
 # --- NEW: Modified DAgger Hyperparameters ---
 ACTION_NOISE_PROB = 0.2       # Probability of adding noise to student policy actions (α parameter)
 ACTION_NOISE_STD = 0.1        # Standard deviation of Gaussian noise (σ parameter)
-KDE_BANDWIDTH = 0.5           # Bandwidth for KDE (controls smoothness)
-KDE_THRESHOLD = 0.1           # Density threshold - trajectories below this are added (lower = more selective)
-KDE_SAMPLE_SIZE = 1000       # Number of samples to use for KDE estimation (for efficiency)
+KDE_BANDWIDTH = 0.4           # Bandwidth for KDE (controls smoothness)
+KDE_THRESHOLD = 0.08           # Density threshold - trajectories below this are added (lower = more selective)
+KDE_SAMPLE_SIZE = 100       # Number of samples to use for KDE estimation (for efficiency)
 
 # Default paths - can be overridden by command line arguments
 DEFAULT_EXPERT_MODEL_FILE = "../expert_implementations/logs/ppo/CarRacing-v3_6/best_model.zip"
