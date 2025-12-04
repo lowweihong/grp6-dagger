@@ -53,6 +53,8 @@ This study implements and evaluates multiple imitation learning approaches on th
 
 ## Results
 
+> **Note**: All experimental results (raw logs, outputs, videos) are consolidated in [`results/baseline/`](./results/baseline/). The `check-performance.ipynb` notebook generates key metrics from these consolidated results.
+
 ### Performance Comparison
 
 | Method | Average Reward | Std Dev | Min Reward | Max Reward |
@@ -139,13 +141,33 @@ python train_smile.py
 jupyter notebook check-performance.ipynb
 ```
 
+The notebook automatically generates key metrics and comparison tables from consolidated experimental results.
+
+## Experimental Results
+
+All experimental results (logs, outputs, videos) are consolidated in the [`results/baseline/`](./results/baseline/) folder for easy access and reproducibility.
+
+### Consolidated Results Structure
+```
+results/baseline/
+├── expert/                    # PPO Expert results
+│   ├── results_*.txt         # Performance metrics
+│   ├── log_*.log             # Training logs
+│   └── videos_*/             # Evaluation videos
+├── behavioural_cloning/       # BC results
+├── dagger/                   # DAgger results
+└── SMILe/                    # SMILe results
+```
+
 ### Generated Demonstrations
 
-Video demonstrations are automatically generated during evaluation and saved in timestamped folders:
-- **Expert**: [`expert_implementations/videos_20251022_012428/`](./expert_implementations/videos_20251022_012428/)
-- **Behavioral Cloning**: [`behavioural_cloning/bc_videos_20251022_155303/`](./behavioural_cloning/bc_videos_20251022_155303/)
-- **DAgger**: [`dagger_implementations/dagger_videos_20251023_074929/`](./dagger_implementations/dagger_videos_20251023_074929/)
-- **SMILe**: [`SMILe_implementation/smile_videos_20251022_161346/`](./SMILe_implementation/smile_videos_20251022_161346/)
+Video demonstrations are automatically generated during evaluation and saved in the consolidated results folder:
+- **Expert**: [`results/baseline/expert/videos_20251022_012428/`](./results/baseline/expert/videos_20251022_012428/)
+- **Behavioral Cloning**: [`results/baseline/behavioural_cloning/videos_20251022_155303/`](./results/baseline/behavioural_cloning/videos_20251022_155303/)
+- **DAgger**: [`results/baseline/dagger/videos_20251023_074929/`](./results/baseline/dagger/videos_20251023_074929/)
+- **SMILe**: [`results/baseline/SMILe/videos_20251022_161346/`](./results/baseline/SMILe/videos_20251022_161346/)
+
+Each folder contains 3 episode recordings (MP4 format) demonstrating the agent's performance. All result files, training logs, and videos are organized in the consolidated [`results/baseline/`](./results/baseline/) directory.
 
 Each folder contains 3 episode recordings (MP4 format) demonstrating the agent's performance.
 
