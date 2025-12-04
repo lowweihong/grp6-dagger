@@ -29,7 +29,7 @@ results/
 ## Contents
 
 Each method folder contains:
-- **Results files** (`*_results_*.txt`): Performance metrics (rewards, fall counts, etc.)
+- **Results files** (`results_*.txt`): Performance metrics (rewards, fall counts, etc.)
 - **Log files** (`log_*.log`): Training logs
 - **Videos** (`videos_*/`): Evaluation episode recordings (MP4 format)
 
