@@ -569,4 +569,4 @@ if __name__ == '__main__':
     main()
     
     
-# nohup python train_dagger_with_fallcount2.py >> log_train_dagger_with_fallcount2.log 2>&1&
+# nohup python train_dagger.py >> log_train_dagger.log 2>&1&

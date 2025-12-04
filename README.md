@@ -103,7 +103,7 @@ This reimplementation successfully validates the DAgger paper's core insights. T
 
 ### Prerequisites
 ```bash
-pip install gymnasium stable-baselines3 tensorflow numpy
+pip install gymnasium stable-baselines3 tensorflow numpy rl_zoo3 gymnasium[box2d] gymnasium[other]
 ```
 
 ### Expert Training
