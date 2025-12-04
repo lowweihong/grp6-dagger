@@ -1,0 +1,12 @@
+=== Behavioral Cloning CarRacing-v3 Results ===
+Timestamp: 2025-10-22 16:10:27
+Model: ./res1/bc_student_model.keras
+Average Reward: 51.69
+Reward Std: 37.90
+Min Reward: 22.36
+Max Reward: 105.21
+
+Episode Details:
+Episode 1: Reward=105.21, Steps=1000
+Episode 2: Reward=22.36, Steps=1000
+Episode 3: Reward=27.49, Steps=1000

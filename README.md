@@ -126,7 +126,7 @@ python train_bc.py
 
 # DAgger
 cd dagger_implementations
-python train_dagger_with_fallcount.py
+python train_dagger.py
 
 # SMILe
 cd SMILe_implementation

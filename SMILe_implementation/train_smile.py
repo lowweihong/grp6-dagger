@@ -573,4 +573,4 @@ def main():
 if __name__ == '__main__':
     main()
 
-# nohup python train_smile_with_fallcount.py >> results/log_smile.log 2>&1&
+# nohup python train_smile.py >> results/log_smile.log 2>&1&
