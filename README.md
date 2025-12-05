@@ -170,15 +170,17 @@ All experimental results (logs, outputs, videos) are consolidated in the [`resul
 
 ### Consolidated Results Structure
 ```
-results/baseline/
-├── expert/                    # PPO Expert results
-│   ├── results_*.txt         # Performance metrics
-│   ├── log_*.log             # Training logs
-│   └── videos_*/             # Evaluation videos
-├── behavioural_cloning/       # BC results
-├── dagger/                   # DAgger results
-└── SMILe/                    # SMILe results
-```
+results/
+├── baseline/
+│   ├── expert/                   # PPO Expert results
+│       ├── results_*.txt         # Performance metrics
+│       ├── log_*.log             # Training logs
+│       └── videos_*/             # Evaluation videos
+|   ├── behavioural_cloning/      # BC results
+|   ├── dagger/                   # DAgger results
+|   └── SMILe/                    # SMILe results
+└── modification/
+|   ├── benchmarking/             # Data colleceted for analysis
 
 ### Generated Demonstrations
 
