@@ -103,12 +103,18 @@ This reimplementation successfully validates the DAgger paper's core insights. T
    conda activate env_dagger_test
    ```
 
-2. **Install system dependencies** (macOS only):
+2. **Install system dependencies**
+(macOS):
    ```bash
    brew install swig  # Required for building box2d-py
    ```
+   (linux):
+   ```
+   sudo apt-get install swig
+   ```
 
-3. **Install Python packages**:
+
+4. **Install Python packages**:
    ```bash
    pip install gymnasium stable-baselines3 tensorflow numpy rl_zoo3 "gymnasium[box2d]" "gymnasium[other]"
    ```
