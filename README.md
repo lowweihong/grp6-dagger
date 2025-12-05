@@ -116,7 +116,7 @@ This reimplementation successfully validates the DAgger paper's core insights. T
 
 3. **Install Python packages**:
    ```bash
-   pip install gymnasium stable-baselines3 tensorflow numpy rl_zoo3 "gymnasium[box2d]" "gymnasium[other]" matplotlib
+   pip install gymnasium stable-baselines3 tensorflow numpy rl_zoo3 "gymnasium[box2d]" "gymnasium[other]" matplotlib scikit-learn
    ```
 
 4. **Linux Issue**: If you run into this issue: `ImportError: libcudnn.so.9: cannot open shared object file: No such file or directory`, run:

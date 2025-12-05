@@ -1,0 +1,12 @@
+=== DAgger CarRacing-v3 Results ===
+Timestamp: 2025-12-05 02:33:15
+Model: ./results/modification/benchmarking/dagger_student_kde.keras
+Average Reward: 215.39
+Reward Std: 57.20
+Min Reward: 143.35
+Max Reward: 283.28
+
+Episode Details:
+Episode 1: Reward=219.55, Steps=1000
+Episode 2: Reward=143.35, Steps=1000
+Episode 3: Reward=283.28, Steps=1000
