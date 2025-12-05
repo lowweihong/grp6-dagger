@@ -116,7 +116,7 @@ This reimplementation successfully validates the DAgger paper's core insights. T
 
 4. **Install Python packages**:
    ```bash
-   pip install gymnasium stable-baselines3 tensorflow numpy rl_zoo3 "gymnasium[box2d]" "gymnasium[other]"
+   pip install gymnasium stable-baselines3 tensorflow numpy rl_zoo3 "gymnasium[box2d]" "gymnasium[other]" matplotlib
    ```
 
 ### Expert Training
