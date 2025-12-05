@@ -155,6 +155,12 @@ cd SMILe_implementation
 python train_smile.py
 ```
 
+#### Modified DAgger
+```bash
+cd dagger_implementations_kde
+python train_dagger_kde.py
+```
+
 ### Evaluation
 
 Run the comprehensive performance comparison:
