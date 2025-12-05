@@ -62,5 +62,5 @@ The `modification/` folder contains experimental results for a modified DAgger i
 - **KDE-based trajectory filtering**: Filters trajectories from well-explored regions
 - **Action noise**: Adds Gaussian noise to student actions for exploration
 
-These experiments compare modified DAgger vs vanilla DAgger across different iteration counts (10, 15, 20, 25, 30, 35, 40). See `dagger_implementations_kde/` for implementation details.
+These experiments compare modified DAgger vs vanilla DAgger across different iteration counts (10, 15, 20, 25, 30, 35, 40). See [`dagger_implementations_kde/`](../dagger_implementations_kde/) for implementation details.
 
