@@ -181,6 +181,7 @@ results/
 |   └── SMILe/                    # SMILe results
 └── modification/
 |   ├── benchmarking/             # Data colleceted for analysis
+```
 
 ### Generated Demonstrations
 
