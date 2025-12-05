@@ -1,0 +1,500 @@
+{
+  "training_info": {
+    "experiment_name": "dagger_vanilla_25",
+    "expert_model": "../expert_implementations/logs/ppo/CarRacing-v3_6/best_model.zip",
+    "student_model": "dagger_vanilla_25.keras",
+    "iterations": 25,
+    "episodes_per_iteration": 1,
+    "epochs_per_iteration": 5,
+    "batch_size": 32,
+    "eval_episodes": 5,
+    "training_time_seconds": 452.136488,
+    "total_samples": 2500,
+    "n_stacked_frames": 2,
+    "expert_mixing_prob": 0.1,
+    "action_noise_prob": 0.0,
+    "action_noise_std": 0.1,
+    "kde_threshold": 0.08,
+    "kde_bandwidth": 0.4,
+    "kde_sample_size": 100,
+    "kde_enabled": false
+  },
+  "expert_performance": {
+    "reward": 41.038276269208325,
+    "avg_falls": 0.0
+  },
+  "student_performance": {
+    "iterations": [
+      {
+        "iteration": 1,
+        "reward": 6.611925605895509,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 2,
+        "reward": 7.425492532650706,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 3,
+        "reward": 6.274109155012949,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 4,
+        "reward": 14.842159586035743,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 5,
+        "reward": 21.785657291623238,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 6,
+        "reward": 23.23787917190099,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 7,
+        "reward": 30.29630460216621,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 8,
+        "reward": 30.870463811944887,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 9,
+        "reward": 33.97518733685977,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 10,
+        "reward": 31.744414312954653,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 11,
+        "reward": 33.744825625810535,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 12,
+        "reward": 31.893893788347338,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 13,
+        "reward": 32.53414374984038,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 14,
+        "reward": 34.930524703538694,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 15,
+        "reward": 39.73265313443447,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 16,
+        "reward": 38.29824406375189,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 17,
+        "reward": 34.6729085489772,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 18,
+        "reward": 37.87449587449583,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 19,
+        "reward": 35.968865191306506,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 20,
+        "reward": 36.42262722290419,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 21,
+        "reward": 38.34024933819533,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 22,
+        "reward": 37.12408624592591,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 23,
+        "reward": 37.936028174519905,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 24,
+        "reward": 36.65056406378012,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 25,
+        "reward": 40.393484039934194,
+        "avg_falls": 0.0
+      }
+    ]
+  },
+  "kde_filtering_stats": {
+    "iterations": [
+      {
+        "iteration": 1,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 2,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 3,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 4,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 5,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 6,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 7,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 8,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 9,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 10,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 11,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 12,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 13,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 14,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 15,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 16,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 17,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 18,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 19,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 20,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 21,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 22,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 23,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 24,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 25,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      }
+    ]
+  },
+  "improvements": {
+    "reward_improvement": 33.781558434038686,
+    "fall_improvement": 0.0,
+    "final_vs_expert": {
+      "reward": {
+        "student": 40.393484039934194,
+        "expert": 41.038276269208325,
+        "difference": -0.644792229274131
+      },
+      "falls": {
+        "student": 0.0,
+        "expert": 0.0,
+        "difference": 0.0
+      }
+    }
+  }
+}

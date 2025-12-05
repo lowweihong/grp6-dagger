@@ -26,7 +26,7 @@ from collections import deque
 from sklearn.neighbors import KernelDensity
 
 # Set GPU
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+# os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 # --- DAgger Hyperparameters ---
 N_DAGGER_ITERATIONS = 40      # Total number of DAgger iterations

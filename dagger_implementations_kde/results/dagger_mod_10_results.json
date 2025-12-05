@@ -1,0 +1,230 @@
+{
+  "training_info": {
+    "experiment_name": "dagger_mod_10",
+    "expert_model": "../expert_implementations/logs/ppo/CarRacing-v3_6/best_model.zip",
+    "student_model": "dagger_mod_10.keras",
+    "iterations": 10,
+    "episodes_per_iteration": 1,
+    "epochs_per_iteration": 5,
+    "batch_size": 32,
+    "eval_episodes": 5,
+    "training_time_seconds": 181.01916,
+    "total_samples": 549,
+    "n_stacked_frames": 2,
+    "expert_mixing_prob": 0.1,
+    "action_noise_prob": 0.2,
+    "action_noise_std": 0.1,
+    "kde_threshold": 0.08,
+    "kde_bandwidth": 0.4,
+    "kde_sample_size": 100,
+    "kde_enabled": true
+  },
+  "expert_performance": {
+    "reward": 35.76627587646889,
+    "avg_falls": 0.0
+  },
+  "student_performance": {
+    "iterations": [
+      {
+        "iteration": 1,
+        "reward": 9.488579219159837,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 2,
+        "reward": 7.080057048422917,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 3,
+        "reward": 7.690752871197506,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 4,
+        "reward": 8.00738449517677,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 5,
+        "reward": 11.160399416491646,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 6,
+        "reward": 17.785022205236857,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 7,
+        "reward": 20.947184787996,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 8,
+        "reward": 23.783928064000534,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 9,
+        "reward": 28.019587731699527,
+        "avg_falls": 0.0
+      },
+      {
+        "iteration": 10,
+        "reward": 29.545332869305856,
+        "avg_falls": 0.0
+      }
+    ]
+  },
+  "kde_filtering_stats": {
+    "iterations": [
+      {
+        "iteration": 1,
+        "total_sampled": 100,
+        "filtered_out": 0,
+        "kept": 100,
+        "filter_ratio": 0.0,
+        "avg_density": 0.0,
+        "min_density": 0.0,
+        "max_density": 0.0,
+        "avg_log_density": -Infinity,
+        "min_log_density": -Infinity,
+        "max_log_density": -Infinity
+      },
+      {
+        "iteration": 2,
+        "total_sampled": 100,
+        "filtered_out": 60,
+        "kept": 40,
+        "filter_ratio": 0.6,
+        "avg_density": 0.13135837814587664,
+        "min_density": 0.00011283648629271805,
+        "max_density": 0.24003519192813721,
+        "avg_log_density": -2.7112664443050396,
+        "min_log_density": -9.08957081116041,
+        "max_log_density": -1.4269697333558131
+      },
+      {
+        "iteration": 3,
+        "total_sampled": 100,
+        "filtered_out": 66,
+        "kept": 34,
+        "filter_ratio": 0.66,
+        "avg_density": 0.12818705074895692,
+        "min_density": 0.006049812260122856,
+        "max_density": 0.1953995799943006,
+        "avg_log_density": -2.4164547506107956,
+        "min_log_density": -5.107728038805522,
+        "max_log_density": -1.6327086888419848
+      },
+      {
+        "iteration": 4,
+        "total_sampled": 100,
+        "filtered_out": 62,
+        "kept": 38,
+        "filter_ratio": 0.62,
+        "avg_density": 0.10134569533365566,
+        "min_density": 0.008193621202592344,
+        "max_density": 0.15043451639490682,
+        "avg_log_density": -2.530574405924111,
+        "min_log_density": -4.804399329557674,
+        "max_log_density": -1.8942273964903147
+      },
+      {
+        "iteration": 5,
+        "total_sampled": 100,
+        "filtered_out": 67,
+        "kept": 33,
+        "filter_ratio": 0.67,
+        "avg_density": 0.10488278985163804,
+        "min_density": 0.0008947005541284434,
+        "max_density": 0.14827937816900813,
+        "avg_log_density": -2.5724385315073035,
+        "min_log_density": -7.019021472065388,
+        "max_log_density": -1.908657094335266
+      },
+      {
+        "iteration": 6,
+        "total_sampled": 100,
+        "filtered_out": 53,
+        "kept": 47,
+        "filter_ratio": 0.53,
+        "avg_density": 0.08230294919663017,
+        "min_density": 1.9287498479639178e-22,
+        "max_density": 0.15140514672342228,
+        "avg_log_density": -3.7490233453257837,
+        "min_log_density": -68.04253270372593,
+        "max_log_density": -1.8877959443463919
+      },
+      {
+        "iteration": 7,
+        "total_sampled": 100,
+        "filtered_out": 54,
+        "kept": 46,
+        "filter_ratio": 0.54,
+        "avg_density": 0.06832874458760728,
+        "min_density": 0.005172130654192713,
+        "max_density": 0.09126840740989482,
+        "avg_log_density": -2.826805479648126,
+        "min_log_density": -5.264470556560063,
+        "max_log_density": -2.393950581823353
+      },
+      {
+        "iteration": 8,
+        "total_sampled": 100,
+        "filtered_out": 39,
+        "kept": 61,
+        "filter_ratio": 0.39,
+        "avg_density": 0.056389847879649825,
+        "min_density": 6.411694519180773e-08,
+        "max_density": 0.1066101357053622,
+        "avg_log_density": -3.5009400547087672,
+        "min_log_density": -16.56255715238914,
+        "max_log_density": -2.2385766901065574
+      },
+      {
+        "iteration": 9,
+        "total_sampled": 100,
+        "filtered_out": 21,
+        "kept": 79,
+        "filter_ratio": 0.21,
+        "avg_density": 0.058281372297419164,
+        "min_density": 0.008698013529107554,
+        "max_density": 0.10638774613108365,
+        "avg_log_density": -3.0774027813888463,
+        "min_log_density": -4.744660609380497,
+        "max_log_density": -2.2406648766478727
+      },
+      {
+        "iteration": 10,
+        "total_sampled": 100,
+        "filtered_out": 29,
+        "kept": 71,
+        "filter_ratio": 0.29,
+        "avg_density": 0.04627590757685632,
+        "min_density": 0.001619298975742933,
+        "max_density": 0.09381173252434231,
+        "avg_log_density": -3.531863691560346,
+        "min_log_density": -6.4257619544158135,
+        "max_log_density": -2.366465350574967
+      }
+    ]
+  },
+  "improvements": {
+    "reward_improvement": 20.05675365014602,
+    "fall_improvement": 0.0,
+    "final_vs_expert": {
+      "reward": {
+        "student": 29.545332869305856,
+        "expert": 35.76627587646889,
+        "difference": -6.220943007163033
+      },
+      "falls": {
+        "student": 0.0,
+        "expert": 0.0,
+        "difference": 0.0
+      }
+    }
+  }
+}
