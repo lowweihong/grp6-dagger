@@ -179,7 +179,7 @@ results/
 |   ├── behavioural_cloning/      # BC results
 |   ├── dagger/                   # DAgger results
 |   └── SMILe/                    # SMILe results
-└── modification/
+├── modification/
 |   ├── benchmarking/             # Data colleceted for analysis
 ```
 
