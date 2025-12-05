@@ -1658,3 +1658,21 @@ Traceback (most recent call last):
   File "/home/jeff/DRL/grp6-dagger/expert_implementations/rl-baselines3-zoo/rl_zoo3/utils.py", line 13, in <module>
     from huggingface_hub import HfApi
 ModuleNotFoundError: No module named 'huggingface_hub'
+Traceback (most recent call last):
+  File "/home/jeff/DRL/grp6-dagger/expert_implementations/rl-baselines3-zoo/train.py", line 1, in <module>
+    from rl_zoo3.train import train
+  File "/home/jeff/DRL/grp6-dagger/expert_implementations/rl-baselines3-zoo/rl_zoo3/__init__.py", line 9, in <module>
+    from rl_zoo3.utils import (
+  File "/home/jeff/DRL/grp6-dagger/expert_implementations/rl-baselines3-zoo/rl_zoo3/utils.py", line 9, in <module>
+    import stable_baselines3 as sb3  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jeff/miniconda3/envs/env_dagger_test/lib/python3.12/site-packages/stable_baselines3/__init__.py", line 3, in <module>
+    from stable_baselines3.a2c import A2C
+  File "/home/jeff/miniconda3/envs/env_dagger_test/lib/python3.12/site-packages/stable_baselines3/a2c/__init__.py", line 1, in <module>
+    from stable_baselines3.a2c.a2c import A2C
+  File "/home/jeff/miniconda3/envs/env_dagger_test/lib/python3.12/site-packages/stable_baselines3/a2c/a2c.py", line 3, in <module>
+    import torch as th
+  File "/home/jeff/.local/lib/python3.12/site-packages/torch/__init__.py", line 405, in <module>
+    from torch._C import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^
+ImportError: libcudnn.so.9: cannot open shared object file: No such file or directory
