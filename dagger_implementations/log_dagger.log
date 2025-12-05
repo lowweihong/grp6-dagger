@@ -4,7 +4,7 @@ I0000 00:00:1761193155.775676 2690820 gpu_device.cc:2020] Created device /job:lo
 DAgger Training with PPO Expert on CarRacing-v3
 ============================================================
 Expert model: ./logs/ppo/CarRacing-v3_6/best_model.zip
-Student model: dagger_student_ppo_with_fallcount2.keras
+Student model: student_dagger.keras
 Iterations: 20
 Episodes per iteration: 1
 Epochs per iteration: 5
@@ -1877,7 +1877,7 @@ Final performance vs Expert:
 Training time: 3:50:39.261498
 Total samples collected: 20000
 
-Final student model saved to dagger_student_ppo_with_fallcount.keras
+Final student model saved to student_dagger.keras
 Performance log saved to dagger_performance_20251023_041120.txt
 JSON results saved to dagger_results_20251023_041120.json
 

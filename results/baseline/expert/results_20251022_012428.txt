@@ -1,0 +1,11 @@
+=== PPO CarRacing-v3 Results ===
+Timestamp: 2025-10-22 01:25:49
+Average Reward: 635.14
+Reward Std: 245.44
+Min Reward: 292.37
+Max Reward: 853.85
+
+Episode Details:
+Episode 1: Reward=759.21, Steps=1000
+Episode 2: Reward=292.37, Steps=1000
+Episode 3: Reward=853.85, Steps=1000

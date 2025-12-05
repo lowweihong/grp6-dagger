@@ -1,7 +1,7 @@
 {
   "training_info": {
     "expert_model": "./logs/ppo/CarRacing-v3_6/best_model.zip",
-    "student_model": "dagger_student_ppo_with_fallcount2.keras",
+    "student_model": "student_dagger.keras",
     "iterations": 20,
     "episodes_per_iteration": 1,
     "epochs_per_iteration": 5,

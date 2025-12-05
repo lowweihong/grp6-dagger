@@ -1,0 +1,12 @@
+=== SMILe CarRacing-v3 Results ===
+Timestamp: 2025-10-22 16:31:29
+Model: res1/student_smile.keras
+Average Reward: 504.28
+Reward Std: 153.30
+Min Reward: 322.58
+Max Reward: 697.55
+
+Episode Details:
+Episode 1: Reward=697.55, Steps=1000
+Episode 2: Reward=322.58, Steps=1000
+Episode 3: Reward=492.72, Steps=1000

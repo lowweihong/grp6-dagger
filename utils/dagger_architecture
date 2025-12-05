@@ -1,0 +1,42 @@
+// DAgger Architecture
+digraph {
+	rankdir=TB
+	splines=ortho
+	nodesep=0.5
+	ranksep=0.5
+	node [fontname=Helvetica fontsize=12 penwidth=0 shape=record style=filled]
+	edge [arrowsize=0.8 color="#555555" penwidth=1.2]
+	subgraph cluster_input {
+		style=invis
+		input [label="{Input Layer|{64, 64, 2}|Stacked Frames}" fillcolor="#E3F2FD" fontcolor="#0D47A1"]
+	}
+	subgraph cluster_conv {
+		style=invis
+		conv1 [label="{Conv2D_1|32 Filters|8x8, Stride 4}" fillcolor="#FFF3E0" fontcolor="#E65100"]
+		conv2 [label="{Conv2D_2|64 Filters|4x4, Stride 2}" fillcolor="#FFF3E0" fontcolor="#E65100"]
+		conv3 [label="{Conv2D_3|64 Filters|3x3, Stride 1}" fillcolor="#FFF3E0" fontcolor="#E65100"]
+	}
+	subgraph cluster_proc {
+		style=invis
+		flat [label="{Flatten|1024 units}" fillcolor="#E8F5E9" fontcolor="#1B5E20"]
+		dense_shared [label="{Dense (Shared)|512 units|ReLU}" fillcolor="#C8E6C9" fontcolor="#1B5E20"]
+	}
+	subgraph cluster_heads {
+		rank=same
+		head_steer [label="{Steer Head|1 unit|Tanh}" fillcolor="#F3E5F5" fontcolor="#4A148C"]
+		head_gas [label="{Gas Head|1 unit|Sigmoid}" fillcolor="#FCE4EC" fontcolor="#880E4F"]
+		head_brake [label="{Brake Head|1 unit|Sigmoid}" fillcolor="#E0F7FA" fontcolor="#006064"]
+	}
+	concat [label="{Concatenate|Output: [Steer, Gas, Brake]}" fillcolor="#F5F5F5" fontcolor="#212121" shape=note]
+	input -> conv1
+	conv1 -> conv2
+	conv2 -> conv3
+	conv3 -> flat
+	flat -> dense_shared
+	dense_shared -> head_steer
+	dense_shared -> head_gas
+	dense_shared -> head_brake
+	head_steer -> concat
+	head_gas -> concat
+	head_brake -> concat
+}

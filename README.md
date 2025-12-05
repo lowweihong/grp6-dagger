@@ -22,16 +22,16 @@ This study implements and evaluates multiple imitation learning approaches on th
 
 ### Environment Setup
 - **Environment**: CarRacing-v3 (continuous action space)
-- **Observation**: 64x64 grayscale images with 2-frame stacking
+- **Observation Space**: 64×64 grayscale images with 2-frame stacking
 - **Action Space**: Continuous steering, acceleration, and braking
-- **Evaluation**: 3 episodes per method, 1000 steps maximum per episode
+- **Evaluation Protocol**: 3 episodes per method, 1000 steps maximum per episode
 
 ### Implemented Methods
 
 #### 1. PPO Expert (Baseline)
-- **Algorithm**: Proximal Policy Optimization
+- **Algorithm**: Proximal Policy Optimization (PPO)
 - **Training**: 275,000 timesteps using rl-baselines3-zoo
-- **Purpose**: Provides expert demonstrations for imitation learning
+- **Purpose**: Provides expert demonstrations for imitation learning methods
 
 #### 2. Behavioral Cloning (BC)
 - **Approach**: Single-shot imitation learning
@@ -42,7 +42,7 @@ This study implements and evaluates multiple imitation learning approaches on th
 #### 3. DAgger (Dataset Aggregation)
 - **Approach**: Iterative learning with expert corrections
 - **Iterations**: 20 iterations, 1 episode per iteration
-- **Training**: 5 epochs per iteration
+- **Training**: 5 epochs per iteration with fine-tuning
 - **Key Innovation**: Student collects data, expert provides corrections
 
 #### 4. SMILe (Stochastic Mixing Iterative Learning)
@@ -52,6 +52,8 @@ This study implements and evaluates multiple imitation learning approaches on th
 - **Advantage**: Reduces overfitting through ensemble diversity
 
 ## Results
+
+> **Note**: All experimental results (raw logs, outputs, videos) are consolidated in [`results/baseline/`](./results/baseline/). The `check-performance.ipynb` notebook generates key metrics from these consolidated results.
 
 ### Performance Comparison
 
@@ -81,19 +83,6 @@ This study implements and evaluates multiple imitation learning approaches on th
 | **DAgger** | 3.8 hours | 20,000 | Iterative |
 | **SMILe** | 3.6 hours | 19,728 | Iterative |
 
-## Discussion
-
-### DAgger Success Factors
-- **Single Environment**: Eliminated environment divergence issues
-- **Expert Mixing**: 10% expert mixing during rollout prevents getting stuck in bad states
-- **Fine-tuning**: Stable learning through iterative fine-tuning instead of retraining
-- **Lower Learning Rate**: Improved convergence with 1e-5 learning rate
-
-### SMILe Success Factors
-- **Ensemble Diversity**: Multiple models reduce overfitting
-- **Stochastic Mixing**: α=0.1 parameter balances exploration and exploitation
-- **Iterative Learning**: Addresses distribution shift effectively
-
 
 ## Conclusion
 
@@ -102,15 +91,35 @@ This reimplementation successfully validates the DAgger paper's core insights. T
 ## Setup and Reproduction
 
 ### Prerequisites
-```bash
-pip install gymnasium stable-baselines3 tensorflow numpy
-```
+
+- **Python**: 3.12 (or compatible version)
+- **CUDA**: Required for GPU acceleration (recommended for expert training)
+
+### Installation
+
+1. **Create and activate conda environment** (recommended):
+   ```bash
+   conda create -n env_dagger_test python=3.12
+   conda activate env_dagger_test
+   ```
+
+2. **Install system dependencies** (macOS only):
+   ```bash
+   brew install swig  # Required for building box2d-py
+   ```
+
+3. **Install Python packages**:
+   ```bash
+   pip install gymnasium stable-baselines3 tensorflow numpy rl_zoo3 "gymnasium[box2d]" "gymnasium[other]"
+   ```
 
 ### Expert Training
+
+Train the PPO expert policy:
 ```bash
-> cd expert_implementations
-> git clone https://github.com/DLR-RM/rl-baselines3-zoo.git
-> python rl-baselines3-zoo/train.py \
+cd expert_implementations
+git clone https://github.com/DLR-RM/rl-baselines3-zoo.git
+python rl-baselines3-zoo/train.py \
     --algo ppo \
     --env CarRacing-v3 \
     --device cuda \
@@ -118,36 +127,62 @@ pip install gymnasium stable-baselines3 tensorflow numpy
     --tensorboard-log ./ppo-carracing >> log_ppo_carracing.log 2>&1&
 ```
 
+**Note**: Expert training requires GPU support and takes several hours. The trained model will be saved in the `logs/` directory.
+
 ### Imitation Learning Methods
+
+#### Behavioral Cloning
 ```bash
-# Behavioral Cloning
 cd behavioural_cloning
 python train_bc.py
+```
 
-# DAgger
+#### DAgger
+```bash
 cd dagger_implementations
-python train_dagger_with_fallcount.py
+python train_dagger.py
+```
 
-# SMILe
+#### SMILe
+```bash
 cd SMILe_implementation
 python train_smile.py
 ```
 
 ### Evaluation
+
+Run the comprehensive performance comparison:
 ```bash
-# Run comprehensive comparison
 jupyter notebook check-performance.ipynb
+```
+
+The notebook automatically generates key metrics and comparison tables from consolidated experimental results.
+
+## Experimental Results
+
+All experimental results (logs, outputs, videos) are consolidated in the [`results/baseline/`](./results/baseline/) folder for easy access and reproducibility.
+
+### Consolidated Results Structure
+```
+results/baseline/
+├── expert/                    # PPO Expert results
+│   ├── results_*.txt         # Performance metrics
+│   ├── log_*.log             # Training logs
+│   └── videos_*/             # Evaluation videos
+├── behavioural_cloning/       # BC results
+├── dagger/                   # DAgger results
+└── SMILe/                    # SMILe results
 ```
 
 ### Generated Demonstrations
 
-Video demonstrations are automatically generated during evaluation and saved in timestamped folders:
-- **Expert**: [`expert_implementations/videos_20251022_012428/`](./expert_implementations/videos_20251022_012428/)
-- **Behavioral Cloning**: [`behavioural_cloning/bc_videos_20251022_155303/`](./behavioural_cloning/bc_videos_20251022_155303/)
-- **DAgger**: [`dagger_implementations/dagger_videos_20251023_074929/`](./dagger_implementations/dagger_videos_20251023_074929/)
-- **SMILe**: [`SMILe_implementation/smile_videos_20251022_161346/`](./SMILe_implementation/smile_videos_20251022_161346/)
+Video demonstrations are automatically generated during evaluation and saved in the consolidated results folder:
+- **Expert**: [`results/baseline/expert/videos_20251022_012428/`](./results/baseline/expert/videos_20251022_012428/)
+- **Behavioral Cloning**: [`results/baseline/behavioural_cloning/videos_20251022_155303/`](./results/baseline/behavioural_cloning/videos_20251022_155303/)
+- **DAgger**: [`results/baseline/dagger/videos_20251023_074929/`](./results/baseline/dagger/videos_20251023_074929/)
+- **SMILe**: [`results/baseline/SMILe/videos_20251022_161346/`](./results/baseline/SMILe/videos_20251022_161346/)
 
-Each folder contains 3 episode recordings (MP4 format) demonstrating the agent's performance.
+Each folder contains 3 episode recordings (MP4 format) demonstrating the agent's performance. All result files, training logs, and videos are organized in the consolidated [`results/baseline/`](./results/baseline/) directory.
 
 ## References
 

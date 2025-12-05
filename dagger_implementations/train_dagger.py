@@ -33,8 +33,8 @@ N_STACKED_FRAMES = 2          # Number of frames to stack (must match expert)
 EXPERT_MIXING_PROB = 0.1      # Probability of using expert during student rollout (like SMILe alpha)
 
 # Default paths - can be overridden by command line arguments
-DEFAULT_EXPERT_MODEL_FILE = "./logs/ppo/CarRacing-v3_6/best_model.zip"
-STUDENT_MODEL_FILE = "dagger_student_ppo_with_fallcount2.keras"
+DEFAULT_EXPERT_MODEL_FILE = "../expert_implementations/logs/ppo/CarRacing-v3_6/best_model.zip"
+STUDENT_MODEL_FILE = "student_dagger.keras"
 
 # Manual frame stacking implementation for PPO expert
 class SimpleFrameStack(gym.Wrapper):
@@ -569,4 +569,4 @@ if __name__ == '__main__':
     main()
     
     
-# nohup python train_dagger_with_fallcount2.py >> log_train_dagger_with_fallcount2.log 2>&1&
+# nohup python train_dagger.py >> log_dagger.log 2>&1&
