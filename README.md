@@ -184,14 +184,16 @@ All experimental results (logs, outputs, videos) are consolidated in the [`resul
 results/
 ├── baseline/
 │   ├── expert/                   # PPO Expert results
-│       ├── results_*.txt         # Performance metrics
-│       ├── log_*.log             # Training logs
-│       └── videos_*/             # Evaluation videos
-|   ├── behavioural_cloning/      # BC results
-|   ├── dagger/                   # DAgger results
-|   └── SMILe/                    # SMILe results
-├── modification/
-|   ├── benchmarking/             # Data colleceted for analysis
+│   │   ├── results_*.txt         # Performance metrics
+│   │   ├── log_*.log             # Training logs
+│   │   └── videos_*/             # Evaluation videos
+│   ├── behavioural_cloning/      # BC results
+│   ├── dagger/                   # DAgger results
+│   └── SMILe/                    # SMILe results
+└── modification/
+    ├── benchmarking/            # KDE-based DAgger experiments
+    ├── results_*.txt             # Evaluation results
+    └── dagger_videos_*/          # Evaluation videos
 ```
 
 ### Generated Demonstrations
@@ -203,6 +205,14 @@ Video demonstrations are automatically generated during evaluation and saved in 
 - **SMILe**: [`results/baseline/SMILe/videos_20251022_161346/`](./results/baseline/SMILe/videos_20251022_161346/)
 
 Each folder contains 3 episode recordings (MP4 format) demonstrating the agent's performance. All result files, training logs, and videos are organized in the consolidated [`results/baseline/`](./results/baseline/) directory.
+
+## Experimental Modifications
+
+In addition to the baseline implementations, we also explored a modified DAgger variant with:
+- **KDE-based trajectory filtering**: Only adds trajectories from underexplored state space regions
+- **Action noise**: Adds Gaussian noise to student policy actions for enhanced exploration
+
+Benchmarking results comparing modified DAgger vs vanilla DAgger across different iteration counts are available in [`results/modification/`](./results/modification/). See [`dagger_implementations_kde/README.md`](./dagger_implementations_kde/README.md) for implementation details.
 
 ## References
 
